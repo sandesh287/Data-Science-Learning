@@ -4,6 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.stats import norm, binom, poisson, uniform
+import seaborn as sns
 
 # Gaussian / Normal Distribution
 x = np.linspace(-4, 4, 100)
@@ -20,8 +21,9 @@ x = np.arange(0, 10)
 plt.bar(x, poisson.pmf(x, lam), alpha=0.7, label='Poisson (l=3)')
 
 # Uniform Distribution
-x = np.linspace(-4, 4, 100)
-plt.plot(x, uniform.pdf(x, loc=0, scale=1), color='red', label='Uniform (u=0, s=1)')
+x = np.random.uniform(low=0, high=10, size=100)
+sns.histplot(x, kde=True, label='Uniform (low=0, high=10)', color='red')
+# plt.plot(x, uniform.pdf(x, loc=0, scale=1), color='red', label='Uniform (u=0, s=1)')
 
 plt.title('Probability Distributions')
 plt.legend()
