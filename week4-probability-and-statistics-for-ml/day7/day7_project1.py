@@ -1,5 +1,7 @@
-# Project
+# Project - 1
 # url = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/tips.csv"
+
+# Project - 3: Use another real-world dataset (eg. healthcare or sales data) to apply similar techniques as project 2
 
 
 # I. Performing EDA
