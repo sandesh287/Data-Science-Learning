@@ -1,5 +1,8 @@
-# Implement a Simple Linear Regression Model using Scikit-Learn
+# 1. Implement a Simple Linear Regression Model using Scikit-Learn
 # Objective: Train a liner regression model and make some predictions
+# 2. Visualize the Regression Line and Analyze Performance
+# Objective: Visualize the model's prediction and evaluate the performance
+
 
 # libraries
 import numpy as np
@@ -7,7 +10,10 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, r2_score
+import matplotlib.pyplot as plt
 
+
+# 1. Implement a Simple Linear Regression Model using Scikit-Learn
 # generate synthetic data
 np.random.seed(42)
 
@@ -27,3 +33,20 @@ y_pred = model.predict(X_test)
 # Print Coefficients
 print("Slope: ", model.coef_[0][0])
 print("Intercept: ", model.intercept_[0])
+
+
+# 2. Visualize the Regression Line and Analyze Performance
+# Visualization
+plt.scatter(X_test, y_test, color='blue', label='Actual')
+plt.plot(X_test, y_pred, color='red', label='Predicted')
+plt.title('Linear Regression Model')
+plt.xlabel('X')
+plt.ylabel('y')
+plt.legend()
+plt.show()
+
+# Evaluate performance
+mse = mean_squared_error(y_test, y_pred)  # testing data comparing with predicting data
+r2 = r2_score(y_test, y_pred)
+print("Mean Square Error: ", mse)
+print("R-Squared: ", r2)
