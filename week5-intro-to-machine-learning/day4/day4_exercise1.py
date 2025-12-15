@@ -1,4 +1,4 @@
-# Implement a logistic regression model to classify a dataset (eg. predicting if a customer will make a purchase)
+# I. Implement a logistic regression model to classify a dataset (eg. predicting if a customer will make a purchase)
 # Objective: Train a logistic regression model to classify customers as likely to purchase which is 1 or 0
 # Dataset: Social Network ads dataset
 # Steps: 1. Load and preprocess the dataset
@@ -7,8 +7,12 @@
 # 4. Evaluating the model using classification metrics
 # Will learn how to train Logistic Regression model to classify customers as likely to purchase or not, based on their behaviour data which is Age and Salary.
 
+# II. Analyze model Performance
+# Visualizing the decision boundary and analyzing the model predictions
 
 
+
+# I. Implement a Logistic Regression model to classify a dataset.
 # libraries
 import pandas as pd
 import numpy as np
@@ -49,3 +53,30 @@ print('Precision: ', precision_score(y_test, y_pred))
 print('Recall: ', recall_score(y_test, y_pred))
 print('F1 Score: ', f1_score(y_test, y_pred))
 print('\nClassification Report: \n', classification_report(y_test, y_pred))
+
+
+
+# II. Analyze the model performance
+
+# libraries
+import matplotlib.pyplot as plt
+
+
+# Plot decision boundary
+x_min, x_max = X[:, 0].min() - 1, X[:, 0].max() + 1
+y_min, y_max = X[:, 1].min() - 1, X[:, 1].max() + 1
+xx, yy = np.meshgrid(np.arange(x_min, x_max, 0.1), np.arange(y_min, y_max, 0.1))
+
+
+# Predict probabilities for grid points
+Z = model.predict(np.c_[xx.ravel(), yy.ravel()])
+Z = Z.reshape(xx.shape)
+
+
+# Plot
+plt.contourf(xx, yy, Z, alpha=0.8, cmap='coolwarm')
+plt.scatter(X_test['Age'], X_test['Salary'], c=y_test, edgecolor='k', cmap='coolwarm')
+plt.title('Logistic Regression Decision Boundary')
+plt.xlabel('Age')
+plt.ylabel('Salary')
+plt.show()
