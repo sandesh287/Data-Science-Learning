@@ -1,0 +1,30 @@
+
+MODEL PERFORMANCE REPORT
+========================
+
+1. California Housing Dataset (Regression)
+------------------------------------------
+Model Used: Linear Regression
+Evaluation Metric: Mean Squared Error (MSE)
+
+MSE: 0.6589
+
+The Linear Regression model performs well due to the linear
+relationship between income, house age, rooms, and house value.
+
+
+
+2. Telco Customer Churn Dataset (Classification)
+------------------------------------------------
+Model Used: K-Nearest Neighbors (KNN)
+
+Accuracy: 0.7300
+F1 Score: 0.5091
+
+The KNN model captures customer similarity patterns effectively,
+especially after feature scaling.
+
+Conclusion:
+-----------
+Linear Regression was best suited for housing price prediction,
+while KNN provided reasonable churn classification performance.
