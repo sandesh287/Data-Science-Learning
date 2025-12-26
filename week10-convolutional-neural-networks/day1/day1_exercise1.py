@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt   # creating charts and visualization
 from torchvision import datasets, transforms
 # datasets provides access to the popular datasets (like CIFAR-10), transforms contains utilities to preprocess and transform image data, such as converting images to tensors
 import numpy as np
+import torch.nn.functional as F
 
 
 # Load dataset
