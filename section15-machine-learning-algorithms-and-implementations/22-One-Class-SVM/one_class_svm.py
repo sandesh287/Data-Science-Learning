@@ -34,4 +34,4 @@ predictions = model.predict(X_test)   # uses the trained model to predict on X_t
 
 
 # Display predictions
-print(f'Predictions: {predictions}')   # prints the results where each element in prediction is either 1 which is normal or -1 which is  anomaly, based on the model's classification
+print(f'Predictions: \n {predictions}')   # prints the results where each element in prediction is either 1 which is normal or -1 which is  anomaly, based on the model's classification
